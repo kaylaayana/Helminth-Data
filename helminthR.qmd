@@ -1,0 +1,27 @@
+---
+title: "Helminth_KA"
+format: html
+editor: visual
+---
+
+## Helminth data
+
+1.  Reading .csv data files from Github repository
+
+```{r}
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/cattle_masterfile.csv", header = TRUE)
+deerdata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/deer_masterfile.csv", header = TRUE)
+goatdata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/goat_masterfile.csv")
+
+#head(cattledata)
+#head(deerdata)
+#head(goatdata)
+
+column_data <- as.numeric(as.character(deerdata$EPG))
+hist(column_data,
+     breaks=50,
+     main="WTD helminths",
+     xlab="Eggs per gram",
+     col="lightblue",
+     border="black")
+```
