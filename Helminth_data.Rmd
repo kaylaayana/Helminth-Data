@@ -3,22 +3,596 @@ title: "R Notebook"
 output: html_notebook
 ---
 
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
-
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
 
 ```{r}
-beefdata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/beefcow_masterfile.csv", header = TRUE)
-my_data <- data.frame(date_collected = c("2021-01-01", "2021-01-02"))
-sorted_data <- data %>% arrange(date_column)
-ggplot(sorted_data, aes(x = value_column)) +
-  geom_histogram(binwidth = 1, color="black", fill="skyblue") + 
-  labs(title="Histogram of Value by Sorted Date",
-       x="Value",
-       y="Frequency") +
-  theme_minimal()
 
-I am trying to make a histrogram showing the epg results for each month. I got stuck at an error message at data %>% arrange(date_column).
+library(dplyr)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/cattle_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-05-01") & date_collected <= as.Date("2024-05-31"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+hist(column_data,
+     breaks=50,
+     main="Cattle EPG - May 2024",
+     xlab= "Eggs per gram",
+     col = "lightblue",
+     border = "black")
+
+```
+```{r}
+library(dplyr)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/cattle_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-06-01") & date_collected <= as.Date("2024-06-30"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+hist(column_data,
+     breaks=50,
+     main="Cattle EPG - June 2024",
+     xlab= "Eggs per gram",
+     col = "lightblue",
+     border = "black")
+```
+```{r}
+library(dplyr)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/cattle_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-08-01") & date_collected <= as.Date("2024-08-30"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+hist(column_data,
+     breaks=50,
+     main="Cattle EPG - August 2024",
+     xlab= "Eggs per gram",
+     col = "lightblue",
+     border = "black")
+```
+```{r}
+library(dplyr)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/cattle_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-10-01") & date_collected <= as.Date("2024-10-31"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+hist(column_data,
+     breaks=50,
+     main="Cattle EPG - October 2024",
+     xlab= "Eggs per gram",
+     col = "lightblue",
+     border = "black")
+```
+```{r}
+library(dplyr)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/cattle_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-12-01") & date_collected <= as.Date("2024-12-31"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+hist(column_data,
+     breaks=50,
+     main="Cattle EPG - December 2024",
+     xlab= "Eggs per gram",
+     col = "lightblue",
+     border = "black")
+```
+```{r}
+library(dplyr)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/cattle_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-5-01") & date_collected <= as.Date("2024-10-31"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+hist(column_data,
+     breaks=50,
+     main="Cattle EPG: May - October 2024",
+     xlab= "Eggs per gram",
+     col = "lightblue",
+     border = "black")
+```
+```{r}
+library(dplyr)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/cattle_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-5-01") & date_collected <= as.Date("2024-12-31"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+hist(column_data,
+     breaks=50,
+     main="Cattle EPG: May - December 2024",
+     xlab= "EPG",
+     col = "lightblue",
+     border = "black")
+```
+```{r}
+library(dplyr)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/dairycow_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-5-01") & date_collected <= as.Date("2024-6-30"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+hist(column_data,
+     breaks=50,
+     main="Dairy Cattle EPG: May - June 2024",
+     xlab= "EPG",
+     col = "lightblue",
+     border = "black")
+```
+```{r}
+library(dplyr)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/dairycow_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-10-01") & date_collected <= as.Date("2024-10-31"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+hist(column_data,
+     breaks=50,
+     main="Dairy Cattle EPG: October 2024",
+     xlab= "EPG",
+     col = "lightblue",
+     border = "black")
+```
+```{r}
+library(dplyr)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/beefcow_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-5-01") & date_collected <= as.Date("2024-5-31"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+hist(column_data,
+     breaks=50,
+     main="Beef Cattle EPG: May 2024",
+     xlab= "EPG",
+     col = "lightblue",
+     border = "black")
+```
+```{r}
+library(dplyr)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/beefcow_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-6-01") & date_collected <= as.Date("2024-6-30"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+hist(column_data,
+     breaks=50,
+     main="Beef Cattle EPG: June 2024",
+     xlab= "EPG",
+     col = "lightblue",
+     border = "black")
+```
+```{r}
+library(dplyr)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/beefcow_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-8-01") & date_collected <= as.Date("2024-8-31"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+hist(column_data,
+     breaks=50,
+     main="Beef Cattle EPG: August 2024",
+     xlab= "EPG",
+     col = "lightblue",
+     border = "black")
+```
+```{r}
+library(dplyr)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/beefcow_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-5-01") & date_collected <= as.Date("2024-8-31"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+hist(column_data,
+     breaks=50,
+     main="Beef Cattle EPG: May - August 2024",
+     xlab= "EPG",
+     col = "lightblue",
+     border = "black")
+```
+```{r}
+library(dplyr)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/sheep_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-5-01") & date_collected <= as.Date("2024-10-31"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+hist(column_data,
+     breaks=50,
+     main="Sheep EPG: May - October 2024",
+     xlab= "EPG",
+     col = "lightblue",
+     border = "black")
+```
+```{r}
+library(dplyr)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/sheep_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-5-01") & date_collected <= as.Date("2024-5-31"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+hist(column_data,
+     breaks=50,
+     main="Sheep EPG: May 2024",
+     xlab= "EPG",
+     col = "lightblue",
+     border = "black")
+```
+```{r}
+library(dplyr)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/sheep_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-6-01") & date_collected <= as.Date("2024-6-30"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+hist(column_data,
+     breaks=50,
+     main="Sheep EPG: June 2024",
+     xlab= "EPG",
+     col = "lightblue",
+     border = "black")
+```
+```{r}
+library(dplyr)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/sheep_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-8-01") & date_collected <= as.Date("2024-8-31"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+hist(column_data,
+     breaks=50,
+     main="Sheep EPG: July 2024",
+     xlab= "EPG",
+     col = "lightblue",
+     border = "black")
+```
+```{r}
+library(dplyr)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/sheep_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-8-01") & date_collected <= as.Date("2024-8-31"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+hist(column_data,
+     breaks=50,
+     main="Sheep EPG: August 2024",
+     xlab= "EPG",
+     col = "lightblue",
+     border = "black")
+```
+```{r}
+library(dplyr)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/sheep_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-10-01") & date_collected <= as.Date("2024-10-31"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+hist(column_data,
+     breaks=50,
+     main="Sheep EPG: October 2024",
+     xlab= "EPG",
+     col = "lightblue",
+     border = "black")
+```
+```{r}
+library(dplyr)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/goat_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-5-01") & date_collected <= as.Date("2024-10-31"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+hist(column_data,
+     breaks=50,
+     main="Goat EPG: May - October 2024",
+     xlab= "EPG",
+     col = "lightblue",
+     border = "black")
+```
+```{r}
+library(dplyr)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/goat_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-5-01") & date_collected <= as.Date("2024-10-31"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+hist(column_data,
+     breaks=50,
+     main="Goat EPG: May 2024",
+     xlab= "EPG",
+     col = "lightblue",
+     border = "black")
+```
+```{r}
+library(dplyr)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/goat_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-6-01") & date_collected <= as.Date("2024-6-30"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+hist(column_data,
+     breaks=50,
+     main="Goat EPG: June 2024",
+     xlab= "EPG",
+     col = "lightblue",
+     border = "black")
+```
+```{r}
+library(dplyr)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/goat_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-8-01") & date_collected <= as.Date("2024-8-31"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+hist(column_data,
+     breaks=50,
+     main="Goat EPG: August 2024",
+     xlab= "EPG",
+     col = "lightblue",
+     border = "black")
+```
+```{r}
+library(dplyr)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/goat_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-10-01") & date_collected <= as.Date("2024-10-31"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+hist(column_data,
+     breaks=50,
+     main="Goat EPG: October 2024",
+     xlab= "EPG",
+     col = "lightblue",
+     border = "black")
+```
+```{r}
+library(ggplot2)
+library(readr)
+library(lubridate)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/goat_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+cattledata$month <- floor_date(cattledata$date_collected, "month")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-5-01") & date_collected <= as.Date("2024-10-31"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+
+ggplot(cattledata, aes(x = month)) +
+  geom_histogram(stat = "count", fill = "skyblue", color = "black") +
+  labs(title = "Goat Fecal Samples May - October 2024",
+       x = "Month",
+       y = "Number of Samples Collected") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+```{r}
+library(ggplot2)
+library(readr)
+library(lubridate)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/sheep_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+cattledata$month <- floor_date(cattledata$date_collected, "month")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-5-01") & date_collected <= as.Date("2024-10-31"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+
+ggplot(cattledata, aes(x = month)) +
+  geom_histogram(stat = "count", fill = "skyblue", color = "black") +
+  labs(title = "Sheep Fecal Samples May - October 2024",
+       x = "Month",
+       y = "Number of Samples Collected") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+```{r}
+library(ggplot2)
+library(readr)
+library(lubridate)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/cattle_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+cattledata$month <- floor_date(cattledata$date_collected, "month")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-5-01") & date_collected <= as.Date("2024-12-31"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+
+ggplot(cattledata, aes(x = month)) +
+  geom_histogram(stat = "count", fill = "skyblue", color = "black") +
+  labs(title = "Cattle Fecal Samples May - December 2024",
+       x = "Month",
+       y = "Number of Samples Collected") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+```{r}
+library(ggplot2)
+library(readr)
+library(lubridate)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/deer_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+cattledata$month <- floor_date(cattledata$date_collected, "month")
+
+subset_cattledata <- cattledata %>% filter(date_collected >= as.Date("2024-5-01") & date_collected <= as.Date("2024-12-31"))
+column_data <- as.numeric(as.character(subset_cattledata$epg))
+
+ggplot(cattledata, aes(x = month)) +
+  geom_histogram(stat = "count", fill = "skyblue", color = "black") +
+  labs(title = "Cattle Fecal Samples May - December 2024",
+       x = "Month",
+       y = "Number of Samples Collected") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+```{r}
+library(ggplot2)
+library(readr)
+library(lubridate)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/deer_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+cattledata$month <- floor_date(cattledata$date_collected, "month")
+
+monthly_avg <- cattledata %>%
+  group_by(month) %>%
+  summarise(avg_value = mean(epg, na.rm = TRUE))
+
+ggplot(monthly_avg, aes(x = month, y = avg_value)) +
+  geom_point(color = "blue", size = 4) +  # Dot plot
+  labs(title = "White-tailed deer average EPG per month", x = "Month", y = "Average EPG") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+```{r}
+library(ggplot2)
+library(readr)
+library(lubridate)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/goat_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+cattledata$month <- floor_date(cattledata$date_collected, "month")
+
+monthly_avg <- cattledata %>%
+  group_by(month) %>%
+  summarise(avg_value = mean(epg, na.rm = TRUE))
+
+ggplot(monthly_avg, aes(x = month, y = avg_value)) +
+  geom_point(color = "blue", size = 4) +  # Dot plot
+  labs(title = "Goat average EPG per month", x = "Month", y = "Average EPG") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+```{r}
+library(ggplot2)
+library(readr)
+library(lubridate)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/sheep_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+cattledata$month <- floor_date(cattledata$date_collected, "month")
+
+monthly_avg <- cattledata %>%
+  group_by(month) %>%
+  summarise(avg_value = mean(epg, na.rm = TRUE))
+
+ggplot(monthly_avg, aes(x = month, y = avg_value)) +
+  geom_point(color = "blue", size = 4) +  # Dot plot
+  labs(title = "Sheep average EPG per month", x = "Month", y = "Average EPG") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+```{r}
+library(ggplot2)
+library(readr)
+library(lubridate)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/cattle_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+cattledata$month <- floor_date(cattledata$date_collected, "month")
+
+monthly_avg <- cattledata %>%
+  group_by(month) %>%
+  summarise(avg_value = mean(epg, na.rm = TRUE))
+
+ggplot(monthly_avg, aes(x = month, y = avg_value)) +
+  geom_point(color = "blue", size = 4) +  # Dot plot
+  labs(title = "Cattle average EPG per month", x = "Month", y = "Average EPG") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+```{r}
+library(ggplot2)
+library(readr)
+library(lubridate)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/dairycow_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+cattledata$month <- floor_date(cattledata$date_collected, "month")
+
+monthly_avg <- cattledata %>%
+  group_by(month) %>%
+  summarise(avg_value = mean(epg, na.rm = TRUE))
+
+ggplot(monthly_avg, aes(x = month, y = avg_value)) +
+  geom_point(color = "blue", size = 4) +  # Dot plot
+  labs(title = "Dairy cattle average EPG per month", x = "Month", y = "Average EPG") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+```{r}
+library(ggplot2)
+library(readr)
+library(lubridate)
+
+cattledata <- read.csv("https://raw.githubusercontent.com/kaylaayana/Helminth-Data/refs/heads/main/beefcow_masterfile.csv", header = TRUE)
+
+cattledata$date_collected <- as.Date(cattledata$date_collected,format = "%m/%d/%y")
+cattledata$month <- floor_date(cattledata$date_collected, "month")
+
+monthly_avg <- cattledata %>%
+  group_by(month) %>%
+  summarise(avg_value = mean(epg, na.rm = TRUE))
+
+ggplot(monthly_avg, aes(x = month, y = avg_value)) +
+  geom_point(color = "blue", size = 4) +  # Dot plot
+  labs(title = "Beef cattle average EPG per month", x = "Month", y = "Average EPG") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
 Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
