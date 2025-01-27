@@ -1,64 +1,58 @@
-﻿facility_id,animal_id,date_collected,date_processed,sample_source,date_treated,drug_used,strongloides,monezia,trich,epg,detected
+﻿facility_id,animal_id,date_collected,date_processed,sample_source,date_treated,drug_used,strongyloides,monezia,trichostrongyle,epg,detected
 au_vet_school,2228,5/24/24,5/24/24,sheep,,"
 ",0,0,1,300,1
 au_vet_school,794,5/24/24,5/24/24,sheep,,"
 ",0,0,1,1300,1
-au_vet_school,4733,5/24/24,5/24/24,sheep,8/17/23,"Fenbendazole, Levamisole, and Ivermectin",0,0,1,1800,1
-au_vet_school,2255,5/24/24,5/24/24,sheep,7/28/23,"Fenbendazole, Levamisole, and Ivermectin",0,0,0,<50,0
 au_vet_school,776,5/24/24,5/24/24,sheep,,"
 ",0,0,1,2000,1
 au_vet_school,2201,5/24/24,5/24/24,sheep,,"
-",0,0,0,<50,0
+",0,0,0,49,0
 au_vet_school,2208,5/24/24,5/24/24,sheep,,"
-",0,0,0,<50,0
+",0,0,0,49,0
 au_vet_school,2413,5/24/24,5/24/24,sheep,,"
 ",0,0,1,750,1
 au_vet_school,2414,5/24/24,5/24/24,sheep,,"
 ",1,0,1,150,1
 au_vet_school,2211,5/24/24,5/29/24,sheep,,"
 ",0,0,1,50,1
-au_vet_school,2247,5/24/24,5/29/24,sheep,8/15/23,"Fenbendazole, Levamisole, and Ivermectin",0,0,0,<50,0
 au_vet_school,2250,5/24/24,5/29/24,sheep,,"
 ",0,0,1,50,1
-au_vet_school,2244,5/24/24,5/29/24,sheep,7/28/23,"Fenbendazole, Levamisole, and Ivermectin",0,0,0,<50,0
 au_vet_school,2245,5/24/24,5/29/24,sheep,,"
-",0,0,0,<50,0
+",0,0,0,49,0
 au_vet_school,2243,5/24/24,5/29/24,sheep,,"
-",0,0,0,<50,0
+",0,0,0,49,0
 au_vet_school,2256,5/24/24,5/29/24,sheep,,"
-",0,0,0,<50,0
+",0,0,0,49,0
 au_vet_school,2417,5/24/24,5/29/24,sheep,,"
 ",0,0,1,550,1
 au_vet_school,782,5/24/24,5/29/24,sheep,,"
 ",0,0,1,300,1
 au_vet_school,2419,5/24/24,5/29/24,sheep,,"
 ",0,0,1,300,1
-au_vet_school,2255,6/12/24,6/12/24,sheep,7/28/23,"Fenbendazole, Levamisole, and Ivermectin",0,1,1,<50,1
 au_vet_school,2244,6/12/24,6/12/24,sheep,,"
-",1,1,1,<50,1
+",1,1,1,49,1
 au_vet_school,776,6/12/24,6/13/24,sheep,,"
 ",0,0,1,1850,1
 au_vet_school,2250,6/12/24,6/13/24,sheep,,"
 ",1,1,1,500,1
 au_vet_school,2247,6/12/24,6/14/24,sheep,,"
-",1,0,1,<50,1
+",1,0,1,49,1
 au_vet_school,4733,6/12/24,6/14/24,sheep,,"
 ",0,0,1,2100,1
 au_vet_school,2245,6/12/24,6/14/24,sheep,,"
-",1,0,1,<50,1
+",1,0,1,49,1
 au_vet_school,782,6/12/24,6/14/24,sheep,,"
-",0,0,1,<50,1
+",0,0,1,49,1
 au_vet_school,2222,6/12/24,6/14/24,sheep,,"
 ",0,0,1,450,1
 au_vet_school,2242,6/12/24,6/14/24,sheep,,"
 ",1,0,1,50,1
 au_vet_school,2256,6/12/24,6/14/24,sheep,,"
-",1,0,1,<50,1
+",1,0,1,49,1
 au_vet_school,2248,6/12/24,6/14/24,sheep,,"
 ",1,1,1,100,1
 au_vet_school,2249,6/12/24,6/14/24,sheep,,"
 ",1,0,1,50,1
-au_vet_school,2216,6/12/24,6/14/24,sheep,7/24/23,"Fenbendazole, Levamisole, and Ivermectin",1,0,1,1500,1
 au_vet_school,2243,6/12/24,6/14/24,sheep,,"
 ",1,1,1,50,1
 au_vet_school,2412,6/20/24,6/24/24,sheep,,"
@@ -71,7 +65,6 @@ au_vet_school,2403,6/20/24,6/25/24,sheep,,"
 ",1,0,1,5250,1
 au_vet_school,2411,6/20/24,6/25/24,sheep,,"
 ",1,1,1,1900,1
-au_vet_school,2213,8/21/24,8/24/24,sheep,7/28/24,"Fenbendazole, Levamisole, and Ivermectin",0,0,1,49,1
 au_vet_school,764,8/21/24,8/24/24,sheep,,"
 ",0,0,1,200,1
 au_vet_school,2208,8/21/24,8/24/24,sheep,,"
@@ -98,13 +91,20 @@ au_vet_school,749,8/21/24,8/25/24,sheep,,"
 ",0,0,1,49,1
 au_vet_school,2250,8/21/24,8/25/24,sheep,,"
 ",0,0,1,3800,1
+au_vet_school,4733,5/24/24,5/24/24,sheep,8/17/23,"Fenbendazole, Levamisole, and Ivermectin",0,0,1,1800,1
+au_vet_school,2255,5/24/24,5/24/24,sheep,7/28/23,"Fenbendazole, Levamisole, and Ivermectin",0,0,0,49,0
+au_vet_school,2247,5/24/24,5/29/24,sheep,8/15/23,"Fenbendazole, Levamisole, and Ivermectin",0,0,0,49,0
+au_vet_school,2244,5/24/24,5/29/24,sheep,7/28/23,"Fenbendazole, Levamisole, and Ivermectin",0,0,0,49,0
+au_vet_school,2255,6/12/24,6/12/24,sheep,7/28/23,"Fenbendazole, Levamisole, and Ivermectin",0,1,1,49,1
+au_vet_school,2216,6/12/24,6/14/24,sheep,7/24/23,"Fenbendazole, Levamisole, and Ivermectin",1,0,1,1500,1
+au_vet_school,2213,8/21/24,8/24/24,sheep,7/28/24,"Fenbendazole, Levamisole, and Ivermectin",0,0,1,49,1
 au_vet_school,2255,8/21/24,8/25/24,sheep,7/28/23,"Fenbendazole, Levamisole, and Ivermectin",0,0,1,49,1
+au_vet_school,2255,10/21/24,10/23/24,sheep,7/28/23,"Fenbendazole, Levamisole, and Ivermectin",0,0,0,49,0
+au_vet_school,2247,10/21/24,10/23/24,sheep,8/15/23,"Fenbendazole, Levamisole, and Ivermectin",0,0,1,2000,1
+au_vet_school,2244,10/21/24,10/23/24,sheep,7/28/23,"Fenbendazole, Levamisole, and Ivermectin",0,0,1,2250,1
 au_vet_school,2248,10/21/24,10/23/24,sheep,,,0,0,1,150,1
 au_vet_school,36,10/21/24,10/23/24,sheep,,,0,1,1,2150,1
 au_vet_school,2242,10/21/24,10/23/24,sheep,,,0,0,1,200,1
 au_vet_school,2411,10/21/24,10/23/24,sheep,,,0,1,1,2800,1
-au_vet_school,2255,10/21/24,10/23/24,sheep,7/28/23,"Fenbendazole, Levamisole, and Ivermectin",0,0,0,49,0
 au_vet_school,2249,10/21/24,10/23/24,sheep,,,0,0,1,1800,1
-au_vet_school,2247,10/21/24,10/23/24,sheep,8/15/23,"Fenbendazole, Levamisole, and Ivermectin",0,0,1,2000,1
 au_vet_school,2412,10/21/24,10/23/24,sheep,,,0,0,1,150,1
-au_vet_school,2244,10/21/24,10/23/24,sheep,7/28/23,"Fenbendazole, Levamisole, and Ivermectin",0,0,1,2250,1
