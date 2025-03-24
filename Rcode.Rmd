@@ -1,0 +1,57 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+x_values <- read.csv(file.choose(), header = TRUE)
+
+library(ggplot2)
+
+# Convert to numeric, replacing non-numeric values with NA
+x_numeric <- suppressWarnings(as.numeric(x_values$epg))  # Suppress warnings for non-numeric values
+
+# Define bins for classification
+x_cleaned <- ifelse(is.na(x_numeric) | x_numeric < 50, "<50",
+                    ifelse(x_numeric >= 50 & x_numeric <= 100, "50-100",
+                    ifelse(x_numeric >= 150 & x_numeric <= 250, "150-250",
+                    ifelse(x_numeric >= 300 & x_numeric <= 400, "300-400",
+                    ifelse(x_numeric >= 450 & x_numeric <= 550, "450-550",
+                    ifelse(x_numeric >= 600 & x_numeric <= 1600, "600-1600",
+                    ifelse(x_numeric >= 1650 & x_numeric <= 2650, "1650-2650",
+                    ifelse(x_numeric >= 2700 & x_numeric <= 3700, "2700-3700",
+                    ifelse(x_numeric >= 3750 & x_numeric <= 4750, "3750-4750",
+                    ifelse(x_numeric >= 4800 & x_numeric <= 5800, "4800-5800",
+                    ifelse(x_numeric >= 5850 & x_numeric <= 6850, "5850-6850",
+                    ifelse(x_numeric >= 6900 & x_numeric <= 7900, "6900-7900",
+                    ifelse(x_numeric >= 7950 & x_numeric <= 8950, "7950-8950",
+                    ifelse(x_numeric >= 9000 & x_numeric <= 10000,"9000-10000",
+                    ifelse(x_numeric >= 10050 & x_numeric <= 11050, "10050-11050",
+                    ifelse(x_numeric >= 11050 & x_numeric <= 12050, "11050-12050",
+                           NA))))))))))))))))
+
+# Convert to a factor with explicit levels to control order
+x_cleaned <- factor(x_cleaned, levels = c("<50", "50-100", "150-250", "300-400", 
+                                          "450-550", "600-1600", "1650-2650", 
+                                          "2700-3700", "3750-4750", "4800-5800", 
+                                          "5850-6850", "6900-7900", "7950-8950", 
+                                          "9000-10000", "10050-11050", "11050-12050"))
+
+# Create a histogram
+ggplot(data.frame(x_cleaned), aes(x = x_cleaned)) +
+  geom_bar(fill = "salmon", color = "black") +
+  labs(title = "Privately Owned Dairy Cattle McMaster Egg Count Results", x = "Egg Count (Eggs per Gram) Ranges", y = "Cattle") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 30, hjust = 1))
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file). 
+
+The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
